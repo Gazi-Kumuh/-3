@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Обмен переменных</title>
+        <meta charset="utf-8">
+        <script>
+window.addEventListener('DOMContentLoaded', function() {
+var nodes = document.querySelectorAll('#x,#y');
+[].forEach.call(nodes, function(item, i) {
+        item.addEventListener('blur', function() {
+            var val = this.value;
+            item.value = nodes[+!i].value
+            nodes[+!i].value = val;
+        });
+    });   });
+</script>
+    </head>
+    <body>
+           <input type="text" id="x"  >
+		   <input type="text" id="y"  >
+
+    </body>
+</html>
